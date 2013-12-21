@@ -242,13 +242,16 @@ module.exports = function (grunt) {
         src: 'dist/css/<%= pkg.name %>-theme.css',
         dest: 'dist/css/<%= pkg.name %>-theme.min.css'
       },
-      docs: {
-        src: [
-          'docs/assets/css/ie10-viewport-bug-workaround.css',
-          'docs/assets/css/src/pygments-manni.css',
-          'docs/assets/css/src/docs.css'
-        ],
-        dest: 'docs/assets/css/docs.min.css'
+      fahrplan: {
+        src: ['less/fahrplan.less'],
+        dest: 'dist/css/<%= pkg.name %>-fahrplan.css'
+      },
+      fahrplan_min: {
+        options: {
+          compress: true
+        },
+        src: ['less/fahrplan.less'],
+        dest: 'dist/css/<%= pkg.name %>-fahrplan.min.css'
       }
     },
 
