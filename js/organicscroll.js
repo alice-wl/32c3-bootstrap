@@ -12,6 +12,11 @@
     var $this   = $(this)
     var vpx, vpy;
 
+    var ua = navigator.userAgent.toLowerCase();
+    if( ua.indexOf("android 2.3") > -1 ) {
+      return false;
+    }
+
     var resizeViewport = function(){
       var screen_height = window.innerHeight;
       if( vpy !== screen_height ){
