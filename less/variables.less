@@ -22,8 +22,13 @@
 
 @skin-path:                 "../";
 @gfloat: right;
-@fg-color: #ccc;
-@border-color: #ccc;
+
+
+@fg: #fff;
+@bg: #000;
+
+@fg-color: #fff;
+@border-color: #666;
 
 
 //== Scaffolding
@@ -31,12 +36,12 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #000;
+@body-bg:               @bg;
 //** Global text color on `<body>`.
 @text-color:            @fg-color;
 
 //** Global textual link color.
-@link-color:            #fff;
+@link-color:            @fg;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 //** Link hover decoration.
@@ -150,11 +155,11 @@
 @btn-font-weight:                normal;
 
 @btn-default-color:              @fg-color;
-@btn-default-bg:                 #000;
+@btn-default-bg:                 @bg;
 @btn-default-border:             @border-color;
 
 @btn-primary-color:              @fg-color;
-@btn-primary-bg:                 #000;
+@btn-primary-bg:                 @bg;
 @btn-primary-border:             darken(@btn-primary-bg, 5%);
 
 @btn-success-color:              @fg-color;
@@ -237,11 +242,11 @@
 //## Dropdown menu container and contents.
 
 //** Background for the dropdown menu.
-@dropdown-bg:                    #000;
+@dropdown-bg:                    @bg;
 //** Dropdown menu `border-color`.
 @dropdown-border:                rgba(0,0,0,.15);
 //** Dropdown menu `border-color` **for IE8**.
-@dropdown-fallback-border:       #000;
+@dropdown-fallback-border:       @bg;
 //** Divider color for between dropdown items.
 @dropdown-divider-bg:            #e5e5e5;
 
@@ -264,7 +269,7 @@
 @dropdown-header-color:          @gray-light;
 
 //** Deprecated `@dropdown-caret-color` as of v3.1.0
-@dropdown-caret-color:           #000;
+@dropdown-caret-color:           @bg;
 
 
 //-- Z-index master list
@@ -527,7 +532,7 @@
 //** Tooltip text color
 @tooltip-color:               @fg-color;
 //** Tooltip background color
-@tooltip-bg:                  #000;
+@tooltip-bg:                  @bg;
 @tooltip-opacity:             .9;
 
 //** Tooltip arrow width
@@ -547,7 +552,7 @@
 //** Popover border color
 @popover-border-color:                rgba(0,0,0,.2);
 //** Popover fallback border color
-@popover-fallback-border-color:       #000;
+@popover-fallback-border-color:       @bg;
 
 //** Popover title background color
 @popover-title-bg:                    darken(@popover-bg, 3%);
@@ -608,7 +613,7 @@
 @modal-content-fallback-border-color:          #999;
 
 //** Modal backdrop background color
-@modal-backdrop-bg:           #000;
+@modal-backdrop-bg:           @bg;
 //** Modal backdrop opacity
 @modal-backdrop-opacity:      .5;
 //** Modal header border color
@@ -826,7 +831,7 @@
 //##
 
 @close-font-weight:           bold;
-@close-color:                 #000;
+@close-color:                 @bg;
 @close-text-shadow:           0 1px 0 @fg-color;
 
 
