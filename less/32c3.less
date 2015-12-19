@@ -39,12 +39,36 @@ table {
   margin: 0; padding: 0;
 }
 
-article {
+  .bordertest {
+    border-image: url(https://32c3.d5.notomorrow.de/congress/2015/wiki/skins/mediawiki-bootstrap/css/..//assets/ramen.png) 
+      49% 50% 50% 50% fill;
+    border-width: 20px;
+    border-image-width: auto;
+  }
+  .bordertest2 {
+    border-image: url(https://32c3.d5.notomorrow.de/congress/2015/wiki/skins/mediawiki-bootstrap/css/..//assets/ramen.png) 
+      49% 50% 50% 50% fill;
+    border-image-width: auto;
+    border-width: 20px;
+  }
+
+article#content {
   padding: 0 15px;
+
+  .mp-box {
+    .bordertest;
+    padding: 0 0 20px;
+  }
+
+  .page-header {
+    .bordertest2;
+  }
 
   .pagestart {
     padding: (@line-height-computed ) 1.5em;
     margin-right: -15px;margin-left: -15px;
+  background: @bg url("@{skin-path}/assets/32C3_bottle_1.png") no-repeat top center;
+  background-size:cover;
   }
   #mw-content-text {
     padding: 14pt 1.5em;
@@ -71,6 +95,12 @@ article {
 
 body {                                                                                                                                           
   width: 95%; height: 100%;
+  background:
+    url("@{skin-path}/assets/32C3_bottles_2.png") no-repeat rbottom right,
+    url("@{skin-path}/assets/32C3_bottle_1.png") no-repeat 40px center
+    @bg;
+  background-size: contain;
+
 /*
 */
 //  background: 
@@ -92,12 +122,16 @@ body {
 //  }
 }   
 .navbar .logo {
+/*
     position: absolute;
     background: #008080;
 
     background:url("@{skin-path}/assets/logo.png") no-repeat 0 0;
     background-size: contain;
     text-indent: -9999px;
+*/
+
+
 }
 .navbar .brand {
     width: 320px;
@@ -347,6 +381,20 @@ html > body.mediawiki > .suggestions {
   a[title="Room:Anti Error Lounge"] { background-color:#900; } 
   a[title="Room:Lounge"] { background-color:#090; } 
   a[title="Room:Sendezentrum"] { background-color:#009; } 
+/*
+Security #5057af
+Politics #b550bd
+Science #45b9b3
+Hardware #a8563f
+Art #b99745
+Failosophy #c0ba59
+CCC #45b964
+Entertainment #45b964 (same as CCC)
+*/
+}
+
+nav {
+  a[title="Static:Assemblies"] { background-image:  url("@{skin-path}/assets/32C3_signs/hackcenter.png") }
 }
 
 .container.fc table {
