@@ -1,3 +1,6 @@
+@import "roboto.less";
+@font-family-special: roboto,@font-family-sans-serif;
+
 // fg white
 @bg-other1: #004c55;
 @bg-other2: #005b66;
@@ -19,6 +22,30 @@
 .gclear {
   clear: @gfloat; }
 
+body {
+  width: 95%; height: 100%;
+  background-color: @bg;
+  background:
+    url("@{skin-path}/assets/32C3_bottles_2_scal.gif") no-repeat bottom right,
+/*
+    url("@{skin-path}/assets/32C3_bottle_1.png") no-repeat 40px center
+*/
+    @bg;
+  background-size: contain;
+/*
+  background-attachment: fixed;
+*/
+}
+.navbar .logo {
+/*
+    position: absolute;
+    background: #008080;
+
+    background:url("@{skin-path}/assets/logo.png") no-repeat 0 0;
+    background-size: contain;
+    text-indent: -9999px;
+*/
+}
 
 /*
   .row:after {
@@ -38,41 +65,40 @@ table {
   list-style: none;
   margin: 0; padding: 0;
 }
+.bordertest {
+  border-image: url(https://32c3.d5.notomorrow.de/congress/2015/wiki/skins/mediawiki-bootstrap/css/..//assets/ramen.png) 
+    49% 50% 50% 50% fill;
+  border-width: 20px;
+  border-image-width: auto;
+}
+.bordertest2 {
+  border-image: url(https://32c3.d5.notomorrow.de/congress/2015/wiki/skins/mediawiki-bootstrap/css/..//assets/ramen.png) 
+    49% 50% 50% 50% fill;
+  border-image-width: auto;
+  border-width: 20px;
+}
 
-  .bordertest {
-    border-image: url(https://32c3.d5.notomorrow.de/congress/2015/wiki/skins/mediawiki-bootstrap/css/..//assets/ramen.png) 
-      49% 50% 50% 50% fill;
-    border-width: 20px;
-    border-image-width: auto;
-  }
-  .bordertest2 {
-    border-image: url(https://32c3.d5.notomorrow.de/congress/2015/wiki/skins/mediawiki-bootstrap/css/..//assets/ramen.png) 
-      49% 50% 50% 50% fill;
-    border-image-width: auto;
-    border-width: 20px;
-  }
+.pagestart {
+  padding: (@line-height-computed ) 1.5em;
+  margin-right: -15px;margin-left: -15px;
+}
+.pagebody {
+  background: rgba(0,0,0,.8);
+}
 
-article#content {
+
+#page article {
+
+  font-family: @font-family-special;
   padding: 0 15px;
 
   .mp-box {
     .bordertest;
     padding: 0 0 20px;
   }
-
-  .page-header {
-    .bordertest2;
-  }
-
-  .pagestart {
-    padding: (@line-height-computed ) 1.5em;
-    margin-right: -15px;margin-left: -15px;
-  background: @bg url("@{skin-path}/assets/32C3_bottle_1.png") no-repeat top center;
-  background-size:cover;
-  }
   #mw-content-text {
     padding: 14pt 1.5em;
-    //.pagebody;
+    .pagebody;
   }
   .mw-search-formheader {
     .bwell;
@@ -81,8 +107,10 @@ article#content {
     padding: 14pt 1.5em;
     margin-right: -15px;margin-left: -15px;
     margin-top: 0; margin-bottom: 0;
-    //.pagebody;
+    .pagebody;
   }
+
+
 
 }
   footer img {
@@ -92,54 +120,15 @@ article#content {
     margin-right: -15px;margin-left: -15px;
     padding: (@line-height-computed ) 1.5em;
   }
-
-body {                                                                                                                                           
-  width: 95%; height: 100%;
-  background:
-    url("@{skin-path}/assets/32C3_bottles_2.png") no-repeat rbottom right,
-    url("@{skin-path}/assets/32C3_bottle_1.png") no-repeat 40px center
-    @bg;
-  background-size: contain;
-
-/*
-*/
-//  background: 
-//	url("@{skin-path}/assets/background-image.png") no-repeat center center;
-//	//url("@{skin-path}/assets/background.png");
-//  background-attachment: fixed;
-//  background-color: #000;
-//  @media (max-width: @screen-sm-max) {
-//    background: 
-//	url("@{skin-path}/assets/background-image.jpg") no-repeat 0 0,
-//	url("@{skin-path}/assets/background.png");
-//  }
-//  @media (min-width: @screen-lg-min) {
-//    background: 
-//	url("@{skin-path}/assets/background-image.jpg") no-repeat 0 0,
-//	url("@{skin-path}/assets/background.png");
-//    background-attachment: fixed;
-//    background-color: #000;
-//  }
-}   
-.navbar .logo {
-/*
-    position: absolute;
-    background: #008080;
-
-    background:url("@{skin-path}/assets/logo.png") no-repeat 0 0;
-    background-size: contain;
-    text-indent: -9999px;
-*/
-
-
-}
 .navbar .brand {
     width: 320px;
     float: left;
     height: 215px;
 }   
+#page nav {
+  margin:0 auto;
+}
 nav {
-  //font-family: @font-family-specialthin;
   font-size: 14pt;
   li > a {
     color: white;
@@ -148,10 +137,6 @@ nav {
   .nav-topbar-collapse {
   }
 }
-#page nav {
-  margin-left: 320px;
-}
-
 @media (min-width: @screen-lg-min) {
   #page {
     font-size: 120%;
@@ -178,7 +163,7 @@ nav {
   }
   #usertools a.btn {
     margin-left: 1em;
-    border-right: 1px inset rgba( 255, 255, 255, .6 );
+    border-right: 1px inset #fff rgba( 255, 255, 255, .6 );
   }
   #usertools button.btn {
     border-left: none;
@@ -216,6 +201,7 @@ nav {
     }
   }
 }
+
 html > body.mediawiki > .suggestions {
   .dropdown-menu;
   margin-top: 7px;
@@ -300,7 +286,7 @@ html > body.mediawiki > .suggestions {
   -webkit-border-radius: 10px; 
   -moz-border-radius: 10px; 
   border-radius: 10px; 
-  border: 1px solid #007280; 
+  border: 1px solid @brand-primary; 
 }
 .nwell {
   .well;
@@ -366,21 +352,6 @@ html > body.mediawiki > .suggestions {
     margin:0 ; padding: 0;
 }
 
-
-.cal-filter-links {
-  a[title="Calendar:Art & Beauty"] { background-color:#ff00ff; } 
-  a[title="Calendar:CCC"] { background-color:@bg-other9; } 
-  a[title="Calendar:Entertainment"] { background-color:#ccc; } 
-  a[title~="Calendar:Ethics,"] { background-color:#00fc0d; } 
-  a[title="Calendar:Hardware & Making"] { background-color:#ddff00; } 
-  a[title="Calendar:Other"] { background-color:@bg-other7; } 
-  a[title="Calendar:Science & Engineering"] { background-color:#ff8000; } 
-  a[title="Calendar:Security & Safety"] { background-color:#00fbff; } 
-  a[title="Calendar:Session"] { background-color:@bg-other8; } 
-
-  a[title="Room:Anti Error Lounge"] { background-color:#900; } 
-  a[title="Room:Lounge"] { background-color:#090; } 
-  a[title="Room:Sendezentrum"] { background-color:#009; } 
 /*
 Security #5057af
 Politics #b550bd
@@ -391,15 +362,38 @@ Failosophy #c0ba59
 CCC #45b964
 Entertainment #45b964 (same as CCC)
 */
+
+    @track1: @bg-other1;
+    @track2: #b99745; //art
+    @track3: #45b964; //ccc
+    @track4: #45b964; //entertainment
+    @track5: #b550bd; //politics
+    @track6: #a8563f; //hardware
+    @track7: #ff0000; //other
+    @track8: #45b9b3; //science
+    @track9: #5057af; //safety
+    @track10: #c0ba59; //failosofy
+
+.cal-filter-links {
+  a[title="Calendar:Art & Beauty"] { background-color:@track2; } 
+  a[title="Calendar:CCC"] { background-color:@track3; } 
+  a[title="Calendar:Entertainment"] { background-color:@track4; } 
+  a[title~="Calendar:Ethics,"] { background-color:@track5; } 
+  a[title="Calendar:Hardware & Making"] { background-color:@track6; } 
+  a[title="Calendar:Other"] { background-color:@track7; } 
+  a[title="Calendar:Science & Engineering"] { background-color:@track8; } 
+  a[title="Calendar:Security & Safety"] { background-color:@track9; } 
+  a[title="Calendar:Failosofy"] { background-color:@track10; } 
+  //a[title="Calendar:Session"] { background-color:@bg-other8; } 
 }
 
 nav {
   a[title="Static:Assemblies"] { background-image:  url("@{skin-path}/assets/32C3_signs/hackcenter.png") }
 }
 
-.container.fc table {
-  //.table-striped;
-}
+//.container.fc table {
+//  .table-striped;
+//}
 
 @import "fc.less";
 
