@@ -176,6 +176,17 @@ module.exports = function (grunt) {
         },
         src: 'less/theme.less',
         dest: 'dist/css/<%= pkg.name %>-theme.css'
+      },
+      compileFahrplan: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: '<%= pkg.name %>-fahrplan.css.map',
+          sourceMapFilename: 'dist/css/<%= pkg.name %>-fahrplan.css.map'
+        },
+        src: 'less/fahrplan.less',
+        dest: 'dist/css/<%= pkg.name %>-fahrplan.css'
       }
     },
 
@@ -245,14 +256,14 @@ module.exports = function (grunt) {
       },
       fahrplan: {
         src: ['less/fahrplan.less'],
-        dest: 'dist/css/<%= pkg.name %>-fahrplan.css'
+        dest: 'dist/css/<%= pkg.name %>Fahrplan.css'
       },
-      fahrplan_min: {
+      fahrplanMin: {
         options: {
           compress: true
         },
         src: ['less/fahrplan.less'],
-        dest: 'dist/css/<%= pkg.name %>-fahrplan.min.css'
+        dest: 'dist/css/<%= pkg.name %>Fahrplan.min.css'
       }
     },
 
@@ -480,7 +491,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-js', ['concat', 'uglify:core', 'commonjs']);
 
   // CSS distribution task.
-  grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme']);
+  grunt.registerTask('less-compile', ['less:compileCore', 'less:compileFahrplan']);
   grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
 
   // Full distribution task.
