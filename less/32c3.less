@@ -35,44 +35,6 @@
       background-size: contain;
   }
 
-  .table ul {
-    list-style: none;
-    margin: 0; padding: 0;
-  }
-  table {
-    .table-condensed;
-    width: auto;
-    font-size: 1em;
-    //table-layout: fixed;
-    td, th {
-      vertical-align: top;
-    }
-    td a {
-      // word-break: break-all;
-      // word-wrap:break-word;
-    }
-    tr {
-      border-bottom: 1px dotted rgba(21, 136, 149, 0.2);
-    }
-    tr:last-child {
-      border-bottom: none;
-    }
-  }
-  dt, dd {
-    line-height: 20px; 
-    margin: 0 .2em 0 .4em;
-  }
-  dt {
-    float: left;
-    clear: left;
-    margin: 0 .2em 0 0;
-    padding: 0 .2em;
-  }
-  dt:after { content: ':'; }
-
-  textarea,.editoptions { color: #000; }
-  pre { color: @fg; background-color: @bg; };
-
   .navbar .logo {
   /*
       position: absolute;
@@ -243,10 +205,66 @@
           background-color: transparent;
           color: @fg-color;
       }
+
+
+
+      .multipleTemplateInstance {
+	background-color: @bg;
+      }
+
     
     }
     .mw-search-formheader {
       .bwell;
+    }
+
+    .table ul {
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    table {
+      .table-condensed;
+      width: auto;
+      font-size: 1em;
+      //table-layout: fixed;
+      td, th {
+        vertical-align: top;
+      }
+      td a {
+        // word-break: break-all;
+        // word-wrap:break-word;
+      }
+      tr {
+        border-bottom: 1px dotted rgba(21, 136, 149, 0.2);
+      }
+      tr:last-child {
+        border-bottom: none;
+      }
+    }
+    dt, dd {
+      line-height: 20px; 
+      margin: 0 .2em 0 .4em;
+    }
+    dt {
+      float: left;
+      clear: left;
+      margin: 0 .2em 0 0;
+      padding: 0 .2em;
+    }
+    dt:after { content: ':'; }
+  
+    textarea,input,select,pre,button,
+      .select2-container-multi .select2-choices,
+      .select2-drop-mask,
+      .editOptions {
+	border: 1px solid @border-color;
+	background-image: none;
+        background-color: @bg;
+        color: @fg; 
+    }
+    #wpTextbox1 {
+      font-family: @font-family-sans-serif;
+      width: 100%;
     }
   }
 
