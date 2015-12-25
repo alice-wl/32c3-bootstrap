@@ -190,11 +190,12 @@
             text-align: center;
           }
           .cell-time {
+            vertical-align: top;
 	    background: none;
           }
         }
         .cell-time {
-          text-align: center;
+          text-align: top;
 	  font-weight: bold;
           width: 50px;
           p {
@@ -202,10 +203,10 @@
             background-color:@well-bg;
             border-top: 1px solid darken(@well-bg, 7%);
             margin: 0 .2em 0 0;
-            text-align: center;
+            text-align: top;
           }
         }
-        tbody tr:nth-child(6n+1) {
+        tbody tr:nth-child(2n+1) {
           border-top: 1px solid rgba( 255,255,255,.2 )
         }
         tr {
@@ -381,6 +382,7 @@
 	    padding: 0; }
 	  margin: 0 .2em;
 	  float: right; }
+        a { color: black; }
         float: right; 
       }
     }
