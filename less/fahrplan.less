@@ -1,3 +1,5 @@
+@skin-path:                 "../wiki/skins/mediawiki-bootstrap/";
+
   /* imports */
     @import "variables.less";
     @import "mixins.less";
@@ -50,7 +52,6 @@
 
   /* vars */
     @well-bg: rgba( 0,0,0,.85);
-    @skin-path:                 "../";
 
     @font-size: 12px;
     @col-count: 4;
@@ -80,7 +81,7 @@
     .jumbotron;
   }
 
-    @import "32c3.less";
+    //@import "32c3.less";
     #colorkeys {
       .track-default {
         background: @track1;
@@ -152,7 +153,7 @@
     //#main-content.schedule {
     //}
     #main-content {
-      font-family: @font-family-special;
+      font-family: @font-family-base;
 
       margin-top: 60px;
       padding-bottom: 0px;
@@ -172,7 +173,6 @@
         }
 
         thead {
-          .pageend;
           position: absolute;
           margin-top: (-( 18px * 2 ) + 2);
           padding: 0;
@@ -188,6 +188,7 @@
 
 	    font-weight: bold;
             text-align: center;
+	    font-family: @font-family-special;
           }
           .cell-time {
             vertical-align: top;
@@ -195,7 +196,6 @@
           }
         }
         .cell-time {
-          text-align: top;
 	  font-weight: bold;
           width: 50px;
           p {
@@ -203,17 +203,19 @@
             background-color:@well-bg;
             border-top: 1px solid darken(@well-bg, 7%);
             margin: 0 .2em 0 0;
-            text-align: top;
+	    font-family: @font-family-special;
           }
         }
         tbody tr:nth-child(2n+1) {
-          border-top: 1px solid rgba( 255,255,255,.2 )
+          border-top: 1px dotted rgba( 255,255,255,.2 )
         }
-        tr {
+        tbody tr:nth-child(2n) {
+          border-top: 1px dotted rgba( 255,255,255,.1 )
         }
         td {
           height: @td-height;
           line-height: @td-height;
+	  vertical-align: top;
           .event {
 	    height: 100%;
 
@@ -224,7 +226,7 @@
             width: @base-width;
             padding: 0;
             line-height: @line-height-base;
-            margin: 0 @base-rightmargin 0 0;
+            margin: 0 5px 0 5px;
 	    margin-bottom: 0;
           }
           .event-wrapper {
@@ -242,7 +244,7 @@
 	      width: 100%;
 	      margin: 0; padding: 0;
 	      font-size: @font-size;
-	      font-family: @font-family-special;
+	      font-family: @font-family-base;
 	      text-align: left;
 	      background: none; 
 	      a {
@@ -300,7 +302,6 @@
         .cellh( 96 );
       }
       table.list {
-        .pagestart;
         padding-top: ( 4 * @td-height );
       }
       table ul {
@@ -313,7 +314,6 @@
     #main-content {
       position: relative;
       padding-bottom: 50px;
-      .pagestart;
       h2 {
         text-align: left;
         padding: 64px 5px 20px 5px;
@@ -351,7 +351,6 @@
         } 
       }
       p.release {
-        .pageend;
         width: 100%;
         height: 64px;
         position: absolute; bottom: -64px; left: 15px; 
@@ -366,10 +365,11 @@
       position: fixed;
       font-size: .8em;
       opacity: .85;
-      bottom: 0;
-      left: 0;
+      bottom: .4em;
+      left: .4em;
       p { 
         float: left;
+	padding: .2em .4em;
         margin: 0; }
       p.brand { 
         color: white; }
@@ -382,7 +382,9 @@
 	    padding: 0; }
 	  margin: 0 .2em;
 	  float: right; }
-        a { color: black; }
+        a { 
+	  font-weight: bold;
+	  color: black; }
         float: right; 
       }
     }
